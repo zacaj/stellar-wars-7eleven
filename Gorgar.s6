@@ -1,0 +1,1566 @@
+;----------------------------------------------------------------------
+; Solenoid Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     S_outhole                               Sol#00
+.DEFINE     S_L_drops                               Sol#01
+.DEFINE     S_eject                                 Sol#02
+.DEFINE     S_M_drops_1                             Sol#03
+.DEFINE     S_M_drops_2                             Sol#04
+.DEFINE     S_R_drops                               Sol#05
+.DEFINE     S_BR_pop                                Sol#06
+.DEFINE     S_flashers                              Sol#07
+.DEFINE     S_sound_1                               Sol#08
+.DEFINE     S_sound_2                               Sol#09
+.DEFINE     S_sound_3                               Sol#0A
+.DEFINE     S_sound_4                               Sol#0B
+.DEFINE     S_sound_5                               Sol#0C
+.DEFINE     S_knocker                               Sol#0D
+
+;----------------------------------------------------------------------
+; Lamp Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     L_Fire_Again                            Lamp#00
+.DEFINE     L_Stellar_1                             Lamp#01
+.DEFINE     L_Stellar_2                             Lamp#02
+.DEFINE     L_Stellar_3                             Lamp#03
+.DEFINE     L_Stellar_4                             Lamp#04
+.DEFINE     L_Stellar_5                             Lamp#05
+.DEFINE     L_Stellar_6                             Lamp#06
+.DEFINE     L_Stellar_7                             Lamp#07
+.DEFINE     L_Wars_1                                Lamp#08
+.DEFINE     L_Wars_2                                Lamp#09
+.DEFINE     L_Wars_3                                Lamp#0A
+.DEFINE     L_Wars_4                                Lamp#0B
+.DEFINE     L_Eject_Hole_2000                       Lamp#0C
+.DEFINE     L_Eject_Hole_5000                       Lamp#0D
+.DEFINE     L_Eject_Hole_10000                      Lamp#0E
+.DEFINE     L_Not_Used                              Lamp#0F
+.DEFINE     L_Outlane_Specials                      Lamp#10
+.DEFINE     L_Bulls_Eye_Target_Special              Lamp#11
+.DEFINE     L_Eject_Hole_Extra_Ball                 Lamp#12
+.DEFINE     L_Captive_Ball                          Lamp#13
+.DEFINE     L_1_Lane                                Lamp#14
+.DEFINE     L_2_Lane                                Lamp#15
+.DEFINE     L_3_Lane                                Lamp#16
+.DEFINE     L_4_Lane                                Lamp#17
+.DEFINE     L_W_Rollover                            Lamp#18
+.DEFINE     L_A_Rollover                            Lamp#19
+.DEFINE     L_R_Rollover                            Lamp#1A
+.DEFINE     L_S_Rollover                            Lamp#1B
+.DEFINE     L_Bottom_Jet_Bumpers                    Lamp#1C
+.DEFINE     L_Top_Left_Jet_Bumper                   Lamp#1D
+.DEFINE     L_Top_Center_Jet_Bumper                 Lamp#1E
+.DEFINE     L_Top_Right_Jet_Bumper                  Lamp#1F
+.DEFINE     L_Spinners                              Lamp#20
+.DEFINE     L_X2_Bonus                              Lamp#21
+.DEFINE     L_X3_Bonus                              Lamp#22
+.DEFINE     L_X4_Bonus                              Lamp#23
+.DEFINE     L_X5_Bonus                              Lamp#24
+.DEFINE     L_10_Bonus                              Lamp#25
+.DEFINE     L_20_Bonus                              Lamp#26
+.DEFINE     L_1_Bonus                               Lamp#27
+.DEFINE     L_2_Bonus                               Lamp#28
+.DEFINE     L_3_Bonus                               Lamp#29
+.DEFINE     L_4_Bonus                               Lamp#2A
+.DEFINE     L_5_Bonus                               Lamp#2B
+.DEFINE     L_6_Bonus                               Lamp#2C
+.DEFINE     L_7_Bonus                               Lamp#2D
+.DEFINE     L_8_Bonus                               Lamp#2E
+.DEFINE     L_9_Bonus                               Lamp#2F
+.DEFINE     L_sys_bonusOverflow                     Lamp#30
+.DEFINE     L_sys_BB_1pGame                         Lamp#31
+.DEFINE     L_sys_BB_2pGame                         Lamp#32
+.DEFINE     L_sys_BB_3pGame                         Lamp#33
+.DEFINE     L_sys_BB_4pGame                         Lamp#34
+.DEFINE     L_sys_BB_match                          Lamp#35
+.DEFINE     L_sys_BB_ballInPlay                     Lamp#36
+.DEFINE     L_sys_BB_credits                        Lamp#37
+.DEFINE     L_sys_BB_playerUp_1                     Lamp#38
+.DEFINE     L_sys_BB_playerUp_2                     Lamp#39
+.DEFINE     L_sys_BB_playerUp_3                     Lamp#3A
+.DEFINE     L_sys_BB_playerUp_4                     Lamp#3B
+.DEFINE     L_sys_BB_tilt                           Lamp#3C
+.DEFINE     L_sys_BB_gameOver                       Lamp#3D
+.DEFINE     L_sys_BB_samePlayerShootsAgain          Lamp#3E
+.DEFINE     L_sys_BB_highScore                      Lamp#3F
+
+;----------------------------------------------------------------------
+; Flag Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     F_B_Jet                                 Flag#00
+.DEFINE     F_L_Jet                                 Flag#01
+.DEFINE     F_R_Jet                                 Flag#02
+.DEFINE     F_M_Jet                                 Flag#03
+
+;----------------------------------------------------------------------
+; Bitgroup Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     B_Bonus                                 Bitgroup#00
+.DEFINE     B_X                                     Bitgroup#01
+.DEFINE     B_1234                                  Bitgroup#02
+.DEFINE     B_Eject                                 Bitgroup#03
+.DEFINE     B_WARS                                  Bitgroup#04
+.DEFINE     B_STELLAR                               Bitgroup#05
+.DEFINE     B_WARS_LANES                            Bitgroup#06
+.DEFINE     B_7                                     Bitgroup#07
+
+;----------------------------------------------------------------------
+; Switch Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     SW_bobTilt                              Switch#00
+.DEFINE     SW_ballTilt                             Switch#01
+.DEFINE     SW_creditButton                         Switch#02
+.DEFINE     SW_coinRight                            Switch#03
+.DEFINE     SW_coinCenter                           Switch#04
+.DEFINE     SW_coinLeft                             Switch#05
+.DEFINE     SW_slamTilt                             Switch#06
+.DEFINE     SW_HSreset                              Switch#07
+.DEFINE     SW_outhole                              Switch#08
+.DEFINE     SW_L_outlane                            Switch#09
+.DEFINE     SW_W_Rollover                           Switch#0A
+.DEFINE     SW_A_Rollover                           Switch#0B
+.DEFINE     SW_L_Kicker                             Switch#0C
+.DEFINE     SW_B_L_Jet                              Switch#0D
+.DEFINE     SW_L_Bank_1                             Switch#0F
+.DEFINE     SW_L_Bank_2                             Switch#10
+.DEFINE     SW_L_Bank_3                             Switch#11
+.DEFINE     SW_L_Bank_Series                        Switch#12
+.DEFINE     SW_L_Standup                            Switch#13
+.DEFINE     SW_Eject                                Switch#14
+.DEFINE     SW_Captive_Ball                         Switch#15
+.DEFINE     SW_L_Top_Stand                          Switch#16
+.DEFINE     SW_U_Top_Stand                          Switch#17
+.DEFINE     SW_L_Spinner                            Switch#18
+.DEFINE     SW_1_Rollover                           Switch#19
+.DEFINE     SW_2_Rollover                           Switch#1A
+.DEFINE     SW_3_Rollover                           Switch#1B
+.DEFINE     SW_4_Rollover                           Switch#1C
+.DEFINE     SW_M_R_Stand                            Switch#1D
+.DEFINE     SW_T_Bank_1                             Switch#1E
+.DEFINE     SW_T_Bank_2                             Switch#1F
+.DEFINE     SW_T_Bank_3                             Switch#20
+.DEFINE     SW_T_Bank_Series                        Switch#21
+.DEFINE     SW_T_Bank_Standup                       Switch#22
+.DEFINE     SW_T_R_Stand                            Switch#23
+.DEFINE     SW_R_Spinner                            Switch#24
+.DEFINE     SW_R_Bullseye                           Switch#25
+.DEFINE     SW_T_C_Jet                              Switch#27
+.DEFINE     SW_R_Special_Target                     Switch#28
+.DEFINE     SW_S_Rollover                           Switch#29
+.DEFINE     SW_R_Rollover                           Switch#2A
+.DEFINE     SW_R_Kicker                             Switch#2B
+.DEFINE     SW_T_L_Jet                              Switch#2C
+.DEFINE     SW_T_R_Jet                              Switch#2D
+.DEFINE     SW_L_R_Jet                              Switch#2E
+.DEFINE     SW_C_Standup                            Switch#2F
+.DEFINE     SW_Tilt                                 Switch#30
+.DEFINE     SW_M_Bank_1                             Switch#31
+.DEFINE     SW_M_Bank_2                             Switch#32
+.DEFINE     SW_M_Bank_3                             Switch#33
+.DEFINE     SW_M_Bank_4                             Switch#34
+.DEFINE     SW_M_Bank_Series                        Switch#35
+
+;----------------------------------------------------------------------
+; SolOp Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     SO_all_drops                            SolOp#00
+.DEFINE     SO_left_drops                           SolOp#01
+.DEFINE     SO_center_drops                         SolOp#02
+.DEFINE     SO_right_drops                          SolOp#03
+
+;----------------------------------------------------------------------
+; SoundCmd Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     SC_10                                   00
+.DEFINE     SC_100                                  01
+.DEFINE     SC_1k                                   02
+.DEFINE     SC_10k                                  03
+.DEFINE     SC_100k                                 04
+
+;----------------------------------------------------------------------
+; System Aliases
+;----------------------------------------------------------------------
+
+.DEFINE     nop                                     $00
+.DEFINE     SS_DEFAULT                              $00
+
+;----------------------------------------------------------------------
+; System6 API (external labels)
+;----------------------------------------------------------------------
+
+.LBL        =display_p1                             $00
+.LBL        _display_bip                            $03
+.LBL        =display_p2                             $04
+.LBL        _display_credits                        $07
+.LBL        =display_p3                             $08
+.LBL        =display_p4                             $0C
+.LBL        =Lamps                                  $10
+.LBL        =Flags                                  $18
+.LBL        =BlinkBuf                               $1A
+.LBL        __dontUse                               $22
+.LBL        =SwitchBuf                              $24
+.LBL        =SwitchMaskBuf                          $2C
+.LBL        =SwitchQueue                            $34
+.LBL        _tiltWarnings                           $37
+.LBL        _solenoids_timer                        $38
+.LBL        _last_solNo                             $39
+.LBL        _soundAndDelay_timer                    $3A
+.LBL        __soundAndDelay_timer_handler           $3B
+.LBL        _solenoid_timer                         $3D
+.LBL        __solenoid_timer_handler                $3E
+.LBL        _gameEvent_timer_1                      $40
+.LBL        __gameEvent_timer_1_handler             $41
+.LBL        _gameEvent_timer_2                      $43
+.LBL        __gameEvent_timer_2_handler             $44
+.LBL        _match                                  $46
+.LBL        _bonusX                                 $47
+.LBL        =intervalTrigger                        $50
+.LBL        _blink_counter                          $54
+.LBL        _playerUp                               $55
+.LBL        _maxPlayerInGame                        $56
+.LBL        _sound_repeatCount                      $57
+.LBL        _sound_id                               $58
+.LBL        _SS_EXT_pinop                           $59
+.LBL        _sound_duration                         $5A
+.LBL        _EB_pending                             $5B
+.LBL        _bonusCountdown_score                   $5C
+.LBL        =scoreQueue                             $5D
+.LBL        =solQueue                               $62
+.LBL        _switchSolCmd                           $66
+.LBL        _tmp1                                   $67
+.LBL        _tmp2                                   $68
+.LBL        _tmp3                                   $69
+.LBL        _tmp4                                   $6A
+.LBL        _tmp5                                   $6B
+.LBL        _tmp6                                   $6C
+.LBL        _tmp7                                   $6D
+.LBL        _switchScript_flags                     $6E
+.LBL        =max_score                              $70
+.LBL        __ballTime                              $74
+.LBL        _gameStatusFlags                        $78
+.LBL        _ISRvar79                               $79
+.LBL        _switchDebounceTimer                    $7A
+.LBL        _ISRmask7B                              $7B
+.LBL        __ISRptr7C                              $7C
+.LBL        __expiredTimer_handler                  $7E
+.LBL        __score_tmpX                            $80
+.LBL        __Xptr                                  $82
+.LBL        __RAM[X,B]_tmpX                         $86
+.LBL        __lampMask[A]_Xin                       $88
+.LBL        __tmpX                                  $8A
+.LBL        __switch_params                         $8C
+.LBL        __copyRAM_tmpX                          $90
+.LBL        __Xstore                                $92
+.LBL        =data_p1                                $94
+.LBL        =data_p2                                $A6
+.LBL        =data_p3                                $B8
+.LBL        =data_p4                                $CA
+.LBL        __ISRvarDC                              $DC
+.LBL        _ISRvarDE                               $DE
+.LBL        _ISRvarDF                               $DF
+.LBL        _GameVarE0                              $E0
+.LBL        _GameVarE1                              $E1
+.LBL        _GameVarE2                              $E2
+.LBL        TOP_OF_STACK                            $FF
+.LBL        =NIBBLE_RAM_START                       $0100
+.LBL        .unused_0102                            $0102
+.LBL        .unused_0103                            $0103
+.LBL        .unused_0104                            $0104
+.LBL        .unused_0105                            $0105
+.LBL        .unknown_system_0106                    $0106
+.LBL        .unknown_system_0107                    $0107
+.LBL        .unknown_system_0108                    $0108
+.LBL        .unknown_system_0109                    $0109
+.LBL        =BB_AU01_leftCoins                      $010A
+.LBL        =BB_AU02_centerCoins                    $0110
+.LBL        =BB_AU03_rightCoins                     $0116
+.LBL        =BB_AU04_paidCredits                    $011C
+.LBL        =BB_AU05_Specials                       $0122
+.LBL        =BB_AU06_replayAwards                   $0128
+.LBL        =BB_AU07_match_HSTD_cred                $012E
+.LBL        =BB_AU08_totalCredits                   $0134
+.LBL        =BB_AU09_extraballs                     $013A
+.LBL        =BB_AU10_ballTime                       $0140
+.LBL        =BB_AU11_ballsPlayed                    $0146
+.LBL        =BB_AU12_HSTD                           $0148
+.LBL        .Credits                                $0152
+.LBL        =BB_saved_display_data                  $0154
+.LBL        .CheckByte                              $017F
+.LBL        .AD13_BUHSTD                            $0181
+.LBL        .AD14_replay1                           $0183
+.LBL        .AD15_replay2                           $0185
+.LBL        .AD16_replay3                           $0187
+.LBL        .AD17_replay4                           $0189
+.LBL        .AD18_maxCredits                        $018B
+.LBL        .AD19_priceControl                      $018D
+.LBL        .AD20_lCoinMult                         $018F
+.LBL        .AD21_cCoinMult                         $0191
+.LBL        .AD22_rCoinMult                         $0193
+.LBL        .AD23_coins4credit                      $0195
+.LBL        .AD24_coinsBonus                        $0197
+.LBL        .AD25_HScredits                         $0199
+.LBL        .AD26_multipleEB                        $019B
+.LBL        .AD26_match                             $019C
+.LBL        .AD27_SpecialAward                      $019D
+.LBL        .AD27_unused                            $019E
+.LBL        .AD28_ScoringAward                      $019F
+.LBL        .AD28_unused                            $01A0
+.LBL        .AD29_tiltWarnings                      $01A1
+.LBL        .AD29_unused                            $01A2
+.LBL        .AD30_ballsPerGame                      $01A3
+.LBL        .AD30_unused                            $01A4
+.LBL        .AD31                                   $01A5
+.LBL        .AD32                                   $01A7
+.LBL        .AD33                                   $01A9
+.LBL        .AD34                                   $01AB
+.LBL        .AD35                                   $01AD
+.LBL        PIA_2200_sol1-8(data)                   $2200
+.LBL        PIA_2200_sol1-8(ctrl)                   $2201
+.LBL        PIA_2202_sol9-16(data)                  $2202
+.LBL        PIA_2202_sol9-16(ctrl)                  $2203
+.LBL        PIA_2202_sol17-24(data)                 $2204
+.LBL        PIA_2202_sol17-24(ctrl)                 $2205
+.LBL        PIA_2400_lampRow_input(data)            $2400
+.LBL        PIA_2400_lampRow_input(ctrl)            $2401
+.LBL        PIA_2402_lampCol_strobe(data)           $2402
+.LBL        PIA_2402_lampCol_strobe(ctrl)           $2403
+.LBL        PIA_2800_display_strobe(data)           $2800
+.LBL        PIA_2800_display_strobe(ctrl)           $2801
+.LBL        PIA_2802_display_digit(data)            $2802
+.LBL        PIA_2802_display_digit(ctrl)            $2803
+.LBL        PIA_3000_switchRow_input(data)          $3000
+.LBL        PIA_3000_switchRow_input(ctrl)          $3001
+.LBL        PIA_3002_switchCol_strobe(data)         $3002
+.LBL        PIA_3002_switchCol_strobe(ctrl)         $3003
+.LBL        sys_reset_game                          $7000
+.LBL        sys_gameOver                            $7045
+.LBL        sys_background_loop                     $7062
+.LBL        sys_enter_audits_and_adjustments        $719A
+.LBL        sys_exec_switchSolCmd                   $71C9
+.LBL        sys_solCmdOrPlaySound[A]                $71CB
+.LBL        sys_solCmd[A]                           $71EC
+.LBL        B=RAM[X,B]                              $721F
+.LBL        sys_switch_script                       $7230
+.LBL        switchScript_awardSPECIAL               $72A8
+.LBL        sys_updateGameLogic_and_runGameEvents   $7300
+.LBL        sys_clearScoreQueue_outhole_handler     $7306
+.LBL        sys_outhole_handler                     $730D
+.LBL        sys_start_ball                          $73E9
+.LBL        sys_ball_kickout                        $740A
+.LBL        sys_end_of_game                         $7426
+.LBL        sys_end_of_game_match[tmp1]             $7457
+.LBL        sys_end_of_game_noMatch                 $746B
+.LBL        sys_load_playerData                     $7520
+.LBL        sys_X=playerData                        $7562
+.LBL        sys_creditButton_handler                $7571
+.LBL        sys_add_player_to_game                  $75C2
+.LBL        sys_init_ball                           $75D8
+.LBL        sys_clear_scoreQueue                    $75F0
+.LBL        sys_coinLeft_handler                    $75FE
+.LBL        sys_coinCenter_handler                  $7602
+.LBL        sys_coinRight_handler                   $7606
+.LBL        sys_update_credits[A]                   $766C
+.LBL        sys_sleep_0.3sec                        $76CC
+.LBL        sys_usleep[A]                           $76D9
+.LBL        sys_copyRAM                             $76DD
+.LBL        sys_update_gameLogic                    $76F1
+.LBL        ballstart_event_handler_7733            $7733
+.LBL        sys_update_gameLogic[X]                 $7744
+.LBL        sys_testBit[A]                          $777C
+.LBL        sys_run_gameEvents                      $77A8
+.LBL        sys_soundCmd[A]                         $77F0
+.LBL        sys_PinOp[A]                            $780E
+.LBL        sys_PinOp_solCmd[B]                     $7832
+.LBL        sys_setBitgroup                         $7897
+.LBL        sys_bitgroupOp[A]_until[B]              $78A8
+.LBL        sys_light_EBlamp                        $7925
+.LBL        sys_setBit[A]                           $792C
+.LBL        sys_clearBit[A]                         $793D
+.LBL        sys_blinkLamp[A]                        $794A
+.LBL        sys_BX=lampMask[A]                      $7953
+.LBL        sys_checkAdjustment                     $7980
+.LBL        sys_bobTilt_handler                     $7993
+.LBL        sys_ballTilt_handler                    $79A3
+.LBL        sys_tilt_sound                          $79B6
+.LBL        sys_exitOnGameOverOrTilt                $79BF
+.LBL        sys_exit                                $79C6
+.LBL        sys_play_soundScript                    $79CB
+.LBL        sys_score[A]                            $79E4
+.LBL        sys_score[A]_now                        $7A00
+.LBL        sys_clear_displays                      $7AD6
+.LBL        sys_fill_displays[A]                    $7AD8
+.LBL        sys_clear_BB_RAM                        $7AE3
+.LBL        sys_bookkeeping_menu                    $7B09
+.LBL        sys_enter_diagnostics?                  $7C8F
+.LBL        sys_copy_[A]bytes_nibbleRAM[X]_to_RAM[Xptr] $7DF8
+.LBL        sys_copy_[A]bytes_RAM[X]_to_nibbleRAM[Xptr] $7E0B
+.LBL        B=nibbleRAM[X,X+1]                      $7E1E
+.LBL        nibbleRAM[X,X+1]=B                      $7E2D
+.LBL        sys_HSreset_handler                     $7E36
+.LBL        sys_IRQ_handler                         $7E4C
+.LBL        sys_IRQ_handler_post_display            $7E9D
+
+<6000>	;----------------------------------------------------------------------
+<6000>	; GAME ROM START
+<6000>	;----------------------------------------------------------------------
+<6000>	
+<6000>	                                .ORG $6000
+<6000>	GAMEROM_CHECKSUM:               .DB $3B 
+<6001>	GAME_NUMBER:                    .DW $1496 
+<6003>	GAMEROM_VERSION:                .DB $F1 
+<6004>	CMOS_CHECKBYTE:                 .DB $5A 
+<6005>	
+<6005>	;----------------------------------------------------------------------
+<6005>	; Game Adjustments
+<6005>	;----------------------------------------------------------------------
+<6005>	
+<6005>	DEFAULT_HIGHSCORE:              .DB $50 
+<6006>	DEFAULT_REPLAYLVL_1:            .DB $30 
+<6007>	DEFAULT_REPLAYLVL_2:            .DB $43 
+<6008>	DEFAULT_REPLAYLVL_3:            .DB $55 
+<6009>	DEFAULT_REPLAYLVL_4:            .DB $00 
+<600A>	DEFAULT_MAXCREDITS:             .DB $20 
+<600B>	DEFAULT_COINSELECT:             .DB $05 
+<600C>	DEFAULT_COINSLOT_1:             .DB $01 
+<600D>	DEFAULT_COINSLOT_2:             .DB $04 
+<600E>	DEFAULT_COINSLOT_3:             .DB $01 
+<600F>	DEFAULT_COINS4CREDIT:           .DB $01 
+<6010>	DEFAULT_COINS4BONUSCREDIT:      .DB $04 
+<6011>	DEFAULT_HIGHSCORE_CREDITS:      .DB $03 
+<6012>	DEFAULT_MATCHAWARD:             .DB $00 
+<6013>	DEFAULT_SPECIALAWARD:           .DB $00 
+<6014>	DEFAULT_REPLAYAWARD:            .DB $00 
+<6015>	DEFAULT_TILTWARNINGS:           .DB $03 
+<6016>	DEFAULT_BALLS_PER_GAME:         .DB $03 
+<6017>	DEFAULT_AD31:                   .DB $01 
+<6018>	DEFAULT_AD32:                   .DB $00 
+<6019>	DEFAULT_AD33:                   .DB $00 
+<601A>	DEFAULT_AD34:                   .DB $00 
+<601B>	DEFAULT_AD35:                   .DB $01 
+<601C>	DEFAULT_COIN_TABLE:             .DB $00 $00 $00 $00 $00 $01 $04 $01 
+<6024>	                                .DB $01 $02 $01 $04 $01 $01 $00 $13 
+<602C>	                                .DB $65 $26 $05 $65 $01 $00 $05 $01 
+<6034>	                                .DB $05 $01 $04 $01 $01 $04 $01 $00 
+<603C>	                                .DB $04 $01 $00 $01 $00 $02 $01 $00 
+<6044>	
+<6044>	;----------------------------------------------------------------------
+<6044>	; Misc Game Data
+<6044>	;----------------------------------------------------------------------
+<6044>	
+<6044>	MAX_SWITCH:                     .DB $2C 
+<6045>	BALLSERVE_SOLCMD_AND_1EB_FLAG:  .DB $10 
+<6046>	EXTRABALL_LAMP:                 .DB L_Fire_Again 
+<6047>	MAX_PLAYER:                     .DB $03 
+<6048>	INTERVAL_TRIGGER_1:             .DB $40 
+<6049>	INTERVAL_TRIGGER_2:             .DB $05 
+<604A>	INTERVAL_TRIGGER_3:             .DB $06 
+<604B>	INTERVAL_TRIGGER_4:             .DB $24 
+<604C>	BLINK_DELAY:                    .DB $08 
+<604D>	INTERVAL_TRIGGER_PINOP_1:       .DB rotLeft(B_7){PinOp} 
+<604E>	INTERVAL_TRIGGER_PINOP_2:       .DB rotLeft(B_STELLAR){PinOp} 
+<604F>	INTERVAL_TRIGGER_PINOP_3:       .DB unadvance(B_Eject){PinOp} 
+<6050>	INTERVAL_TRIGGER_PINOP_4:       .DB fire(SO_right_drops){PinOp} 
+<6051>	SCRIPT_LAMPS:                   .DB L_W_Rollover                    	; Scriptlamp#00
+<6052>	                                .DB L_A_Rollover                    	; Scriptlamp#01
+<6053>	                                .DB L_R_Rollover                    	; Scriptlamp#02
+<6054>	                                .DB L_S_Rollover                    	; Scriptlamp#03
+<6055>	                                .DB L_Fire_Again                    	; Scriptlamp#04
+<6056>	                                .DB L_Fire_Again                    	; Scriptlamp#05
+<6057>	                                .DB L_Fire_Again                    	; Scriptlamp#06
+<6058>	                                .DB L_Fire_Again                    	; Scriptlamp#07
+<6059>	
+<6059>	;----------------------------------------------------------------------
+<6059>	; Bit Group Table
+<6059>	;----------------------------------------------------------------------
+<6059>	
+<6059>	BITGROUP_TABLE:                 .DB L_Stellar_7 L_Outlane_Specials  	; Bitgroup#00: B_Bonus
+<605B>	                                .DB L_Stellar_3 L_Stellar_4         	; Bitgroup#01: B_X
+<605D>	                                .DB L_W_Rollover L_S_Rollover       	; Bitgroup#02: B_1234
+<605F>	                                .DB L_Spinners L_X5_Bonus           	; Bitgroup#03: B_Eject
+<6061>	                                .DB L_5_Bonus L_7_Bonus             	; Bitgroup#04: B_WARS
+<6063>	                                .DB L_Captive_Ball L_2_Lane         	; Bitgroup#05: B_STELLAR
+<6065>	                                .DB F_B_Jet F_L_Jet                 	; Bitgroup#06: B_WARS_LANES
+<6067>	                                .DB L_Bottom_Jet_Bumpers L_Top_Right_Jet_Bumper 	; Bitgroup#07: B_7
+<6069>	
+<6069>	;----------------------------------------------------------------------
+<6069>	; Lamp/Flag Initialization and Memory Data
+<6069>	;----------------------------------------------------------------------
+<6069>	
+<6069>	LAMPS_INITDATA:                 _LampData L_Stellar_7 L_sys_BB_1pGame L_sys_BB_ballInPlay 
+<6071>	FLAGS_INITDATA:                 _FlagData F_B_Jet 
+<6073>	BLINK_INITDATA:                 _LampData 
+LAMPS_MEMDATA:                  _LampData L_Fire_Again L_Stellar_5 L_Stellar_6 L_Captive_Ball \
+                                                       L_1_Lane L_2_Lane L_3_Lane L_4_Lane \
+                                                       L_W_Rollover L_A_Rollover L_R_Rollover L_S_Rollover \
+                                                       L_Spinners L_X2_Bonus L_X3_Bonus L_X4_Bonus \
+                                                       L_X5_Bonus L_3_Bonus L_4_Bonus L_5_Bonus \
+                                                       L_6_Bonus L_7_Bonus L_sys_BB_ballInPlay 
+<6083>	FLAGS_MEMDATA:                  _FlagData Flag#09 Flag#0C Flag#0E Flag#0F 
+BLINK_MEMDATA:                  _LampData L_W_Rollover L_A_Rollover L_R_Rollover L_S_Rollover \
+                                                       L_Spinners L_X2_Bonus L_X3_Bonus L_X4_Bonus \
+                                                       L_X5_Bonus L_5_Bonus L_6_Bonus L_7_Bonus \
+                                                       
+<608D>	
+<608D>	;----------------------------------------------------------------------
+<608D>	; Sound Table
+<608D>	;----------------------------------------------------------------------
+<608D>	
+<608D>	SOUND_TABLE:                    .DB Sound#0A $02                    	; 00{SoundCmd}: SC_10
+<608F>	                                .DB Sound#05 $02                    	; 01{SoundCmd}: SC_100
+<6091>	                                .DB Sound#15 $04                    	; 02{SoundCmd}: SC_1k
+<6093>	                                .DB Sound#0F $04                    	; 03{SoundCmd}: SC_10k
+<6095>	                                .DB Sound#0E $10                    	; 04{SoundCmd}: SC_100k
+<6097>	                                .DB Sound#0E $04                    	; 05{SoundCmd}
+<6099>	                                .DB Sound#14 $18                    	; 06{SoundCmd}
+<609B>	                                .DB Sound#17 $04                    	; 07{SoundCmd}
+<609D>	                                .DB Sound#15 $04                    	; 08{SoundCmd}
+<609F>	                                .DB Sound#0D $60                    	; 09{SoundCmd}
+<60A1>	                                .DB Sound#1B $E0                    	; 10{SoundCmd}
+<60A3>	                                .DB Sound#1D $10                    	; 11{SoundCmd}
+<60A5>	                                .DB Sound#1E $6A                    	; 12{SoundCmd}
+<60A7>	                                .DB Sound#1C $E0                    	; 13{SoundCmd}
+<60A9>	                                .DB Sound#1F $07                    	; 14{SoundCmd}
+<60AB>	                                .DB Sound#00 $FF                    	; 15{SoundCmd}
+<60AD>	
+<60AD>	;----------------------------------------------------------------------
+<60AD>	; PinOp Solenoid Tables
+<60AD>	;----------------------------------------------------------------------
+<60AD>	
+<60AD>	PINOP_SOLCMD_TABLE:             .DB S_eject:3-tics{SolCmd}          	; Cmd#00
+<60AE>	                                .DB S_M_drops_1:3-tics{SolCmd}      	; Cmd#01
+<60AF>	                                .DB Sol#0E:9-tics{SolCmd}           	; Cmd#02
+<60B0>	                                .DB S_M_drops_2:7-tics{SolCmd}      	; Cmd#03
+<60B1>	                                .DB S_M_drops_2:7-tics{SolCmd}      	; Cmd#04
+<60B2>	                                .DB S_M_drops_2:7-tics{SolCmd}      	; Cmd#05
+<60B3>	                                .DB S_knocker:9-tics{SolCmd}        	; Cmd#06
+<60B4>	                                .DB S_R_drops:5-tics{SolCmd}        	; Cmd#07
+<60B4>	
+<60B5>	PINOP_SOLOP_TABLE:              _SolOp Cmd#00                       	; SolOp#00: SO_all_drops
+<60B6>	                                _SolOp Cmd#01                       	; SolOp#01: SO_left_drops
+<60B7>	                                _SolOp Cmd#02-05                    	; SolOp#02: SO_center_drops
+<60B8>	                                _SolOp Cmd#07                       	; SolOp#03: SO_right_drops
+<60B9>	                                _SolOp Cmd#03-06                    	; SolOp#04
+<60BA>	                                .DB 0                               	; SolOp#05 (unused)
+<60BB>	                                .DB 0                               	; SolOp#06 (unused)
+<60BC>	                                _SolOp Cmd#00-01                    	; SolOp#07
+<60BD>	
+<60BD>	;----------------------------------------------------------------------
+<60BD>	; Outhole Bonus Data
+<60BD>	;----------------------------------------------------------------------
+<60BD>	
+<60BD>	BONUSCOUNT_BONUSX_DELAY:        .DB $C0 
+<60BE>	BONUSCOUNT_SOUND:               .DB $96 
+<60BF>	BONUSCOUNT_DELAY:               .DB $06 
+<60C0>	BONUSLAMPS_TABLE:               .DB L_Stellar_7 
+<60C1>	                                .DB L_Not_Used 
+<60C2>	                                .DB L_Bulls_Eye_Target_Special 
+<60C3>	                                .DB L_Eject_Hole_Extra_Ball 
+<60C4>	BONUSX_LAMPS_TABLE:             .DB L_Stellar_3 
+<60C5>	                                .DB L_Stellar_4 
+<60C6>	                                .DB L_Fire_Again 
+<60C7>	                                .DB L_Fire_Again 
+<60C8>	BONUSX_VALUE_TABLE:             .DB $02 $03 $00 $00 
+<60CC>	
+<60CC>	;----------------------------------------------------------------------
+<60CC>	; Misc Game Data
+<60CC>	;----------------------------------------------------------------------
+<60CC>	
+<60CC>	SPECIAL_SCORE:                  .DB 5x10K{ScoreByte_noSound.s6} 
+<60CD>	
+<60CD>	;----------------------------------------------------------------------
+<60CD>	; System Sounds
+<60CD>	;----------------------------------------------------------------------
+<60CD>	
+<60CD>	SYSSND_CREDIT:                  .DB S_knocker:4-tics{SolCmd} 
+<60CE>	SYSSND_CREDIT_DELAY:            .DB $10 
+<60CF>	SYSSND_TILTWARNING:             .DB Sound#01 
+<60D0>	
+<60D0>	;----------------------------------------------------------------------
+<60D0>	; System Pointers
+<60D0>	;----------------------------------------------------------------------
+<60D0>	
+<60D0>	GAMELOGIC_TABLE:                .DW gameLogic_1 
+<60D2>	GAMELOGIC_TABLE_END:            .DW gameEvents_table 
+<60D4>	GAMEEVENTS_TABLE:               .DW gameEvents_table 
+<60D6>	GAMEEVENTS_TABLE_END:           .DW p1Start_sndList 
+<60D8>	GAME_BACKGROUND_HANDLER:        .DW game_background_handler 
+<60DA>	BALLSTART_EVENT:                .DW ballstart_event_handler 
+<60DC>	BONUSX_COUNTDOWN_EVENT:         .DW bonusX_countdown_event_handler 
+<60DE>	END_OF_BALL_EVENT:              .DW endOfBall_event_handler 
+<60E0>	
+<60E0>	;----------------------------------------------------------------------
+<60E0>	; System Soundscripts
+<60E0>	;----------------------------------------------------------------------
+<60E0>	
+<60E0>	SOUNDSCRIPT_P1:                 .DW p1Start_sndList 
+<60E2>	SOUNDSCRIPT_P2:                 .DW p2Start_sndList 
+<60E4>	SOUNDSCRIPT_P3:                 .DW p3Start_sndList 
+<60E6>	SOUNDSCRIPT_P4:                 .DW p4Start_sndList 
+<60E8>	SOUNDSCRIPT_MATCH:              .DW match_sndList 
+<60EA>	SOUNDSCRIPT_HIGHSCORE:          .DW highScore_sndList 
+<60EC>	SOUNDSCRIPT_GAMEOVER:           .DW gameOver_sndList 
+<60EE>	
+<60EE>	;----------------------------------------------------------------------
+<60EE>	; IRQ hook
+<60EE>	;----------------------------------------------------------------------
+<60EE>	
+<60EE>	IRQ_HANDLER:
+<60EE>	        JMP     sys_IRQ_handler 
+<60EE>	
+<60F1>	
+<60F1>	;----------------------------------------------------------------------
+<60F1>	; Attract Mode Data
+<60F1>	;----------------------------------------------------------------------
+<60F1>	
+<60F1>	ATTRACT_DELAY:                  .DB $06 
+<60F2>	ATTRACT_SEQ_MAX:                .DB $07 
+<60F3>	ATTRACT_DATA:                   .DW attract_mode_data 
+<60F5>	
+<60F5>	;----------------------------------------------------------------------
+<60F5>	; Switch Table
+<60F5>	;----------------------------------------------------------------------
+<60F5>	
+<60F5>	SW_bobTilt:                     .DW sys_bobTilt_handler 
+<60F7>	SW_bobTilt_params:              .DB $00 $00 
+<60F9>	SW_ballTilt:                    .DW sys_ballTilt_handler 
+<60FB>	SW_ballTilt_params:             .DB $00 $00 
+<60FD>	SW_creditButton:                .DW sys_creditButton_handler 
+<60FF>	SW_creditButton_params:         .DB $00 $00 
+<6101>	SW_coinRight:                   .DW sys_coinRight_handler 
+<6103>	SW_coinRight_params:            .DB $00 $00 
+<6105>	SW_coinCenter:                  .DW sys_coinCenter_handler 
+<6107>	SW_coinCenter_params:           .DB $00 $00 
+<6109>	SW_coinLeft:                    .DW sys_coinLeft_handler 
+<610B>	SW_coinLeft_params:             .DB $00 $00 
+<610D>	SW_slamTilt:                    .DW SW_slamTilt_handler 
+<610F>	SW_slamTilt_params:             .DB $00 $00 
+<6111>	SW_HSreset:                     .DW sys_HSreset_handler 
+<6113>	SW_HSreset_params:              .DB $00 $00 
+<6115>	SW_outhole:                     .DW SW_outhole_handler 
+<6117>	bonusScorePtr:                  .DW _bonusScore 
+<6119>	SW_L_outlane:                   .DW sys_switch_script 
+<611B>	SW_L_outlane_scriptPtr:         .DW SW_L_outlane_script 
+<611D>	SW_W_Rollover:                  .DW sys_switch_script 
+<611F>	SW_W_Rollover_scriptPtr:        .DW SW_W_Rollover_script 
+<6121>	SW_A_Rollover:                  .DW sys_switch_script 
+<6123>	SW_A_Rollover_scriptPtr:        .DW SW_A_Rollover_script 
+<6125>	SW_L_Kicker:                    .DW sys_switch_script 
+<6127>	SW_L_Kicker_scriptPtr:          .DW SW_L_Kicker_script 
+<6129>	SW_B_L_Jet:                     .DW sys_switch_script 
+<612B>	SW_B_L_Jet_scriptPtr:           .DW SW_B_L_Jet_script 
+<612D>	Switch0E:                       .DW sys_switch_script 
+<612F>	Switch0E_scriptPtr:             .DW Switch0E_script 
+<6131>	SW_L_Bank_1:                    .DW sys_switch_script 
+<6133>	SW_L_Bank_1_scriptPtr:          .DW SW_L_Bank_1_script 
+<6135>	SW_L_Bank_2:                    .DW sys_switch_script 
+<6137>	SW_L_Bank_2_scriptPtr:          .DW SW_L_Bank_1_script 
+<6139>	SW_L_Bank_3:                    .DW sys_switch_script 
+<613B>	SW_L_Bank_3_scriptPtr:          .DW SW_L_Kicker_script 
+<613D>	SW_L_Bank_Series:               .DW sys_switch_script 
+<613F>	SW_L_Bank_Series_scriptPtr:     .DW SW_L_Kicker_script 
+<6141>	SW_L_Standup:                   .DW sys_switch_script 
+<6143>	SW_L_Standup_scriptPtr:         .DW SW_L_Kicker_script 
+<6145>	SW_Eject:                       .DW sys_switch_script 
+<6147>	SW_Eject_scriptPtr:             .DW SW_Eject_script 
+<6149>	SW_Captive_Ball:                .DW sys_switch_script 
+<614B>	SW_Captive_Ball_scriptPtr:      .DW SW_L_Bank_1_script 
+<614D>	SW_L_Top_Stand:                 .DW sys_switch_script 
+<614F>	SW_L_Top_Stand_scriptPtr:       .DW SW_L_Top_Stand_script 
+<6151>	SW_U_Top_Stand:                 .DW sys_switch_script 
+<6153>	SW_U_Top_Stand_scriptPtr:       .DW SW_U_Top_Stand_script 
+<6155>	SW_L_Spinner:                   .DW sys_switch_script 
+<6157>	SW_L_Spinner_scriptPtr:         .DW SW_U_Top_Stand_script 
+<6159>	SW_1_Rollover:                  .DW sys_switch_script 
+<615B>	SW_1_Rollover_scriptPtr:        .DW SW_1_Rollover_script 
+<615D>	SW_2_Rollover:                  .DW SW_2_Rollover_handler 
+<615F>	SW_2_Rollover_scriptPtr:        .DW SW_2_Rollover_script 
+<6161>	SW_3_Rollover:                  .DW sys_switch_script 
+<6163>	SW_3_Rollover_scriptPtr:        .DW SW_3_Rollover_script 
+<6165>	SW_4_Rollover:                  .DW sys_ballTilt_handler 
+<6167>	SW_4_Rollover_params:           .DB $00 $00 
+<6169>	SW_M_R_Stand:                   .DW sys_switch_script 
+<616B>	SW_M_R_Stand_scriptPtr:         .DW SW_M_R_Stand_script 
+<616D>	SW_T_Bank_1:                    .DW sys_switch_script 
+<616F>	SW_T_Bank_1_scriptPtr:          .DW SW_T_Bank_1_script 
+<6171>	SW_T_Bank_2:                    .DW sys_switch_script 
+<6173>	SW_T_Bank_2_scriptPtr:          .DW SW_T_Bank_2_script 
+<6175>	SW_T_Bank_3:                    .DW sys_switch_script 
+<6177>	SW_T_Bank_3_scriptPtr:          .DW SW_T_Bank_3_script 
+<6179>	SW_T_Bank_Series:               .DW sys_switch_script 
+<617B>	SW_T_Bank_Series_scriptPtr:     .DW SW_T_Bank_Series_script 
+<617D>	SW_T_Bank_Standup:              .DW sys_switch_script 
+<617F>	SW_T_Bank_Standup_scriptPtr:    .DW SW_T_Bank_Standup_script 
+<6181>	SW_T_R_Stand:                   .DW sys_switch_script 
+<6183>	SW_T_R_Stand_scriptPtr:         .DW SW_A_Rollover_script 
+<6185>	SW_R_Spinner:                   .DW sys_switch_script 
+<6187>	SW_R_Spinner_scriptPtr:         .DW SW_R_Spinner_script 
+<6189>	SW_R_Bullseye:                  .DW sys_switch_script 
+<618B>	SW_R_Bullseye_scriptPtr:        .DW SW_R_Bullseye_script 
+<618D>	Switch26:                       .DW sys_switch_script 
+<618F>	Switch26_scriptPtr:             .DW Switch26_script 
+<6191>	SW_T_C_Jet:                     .DW sys_switch_script 
+<6193>	SW_T_C_Jet_scriptPtr:           .DW SW_L_Bank_1_script 
+<6195>	SW_R_Special_Target:            .DW sys_switch_script 
+<6197>	SW_R_Special_Target_scriptPtr:  .DW SW_R_Special_Target_script 
+<6199>	SW_S_Rollover:                  .DW sys_switch_script 
+<619B>	SW_S_Rollover_scriptPtr:        .DW SW_R_Special_Target_script 
+<619D>	SW_R_Rollover:                  .DW sys_switch_script 
+<619F>	SW_R_Rollover_scriptPtr:        .DW SW_R_Special_Target_script 
+<61A1>	SW_R_Kicker:                    .DW sys_switch_script 
+<61A3>	SW_R_Kicker_scriptPtr:          .DW SW_R_Kicker_script 
+<61A5>	
+<61A5>	;----------------------------------------------------------------------
+<61A5>	; Outhole Bonus Value
+<61A5>	;----------------------------------------------------------------------
+<61A5>	
+<61A5>	_bonusScore:                    .DB 1x1K{ScoreByte.s6} 
+<61A6>	
+<61A6>	;----------------------------------------------------------------------
+<61A6>	; Switch Script
+<61A6>	;----------------------------------------------------------------------
+<61A6>	
+<61A6>	SW_L_outlane_script:
+<61A6>	                _SwitchScriptConfig Ext 
+<61A7>	                .DB SS_DEFAULT 5x1K{ScoreByte.s6} 
+<61A9>	                                _ExtendedScript If(L_Stellar_1) { 10{SoundCmd} clearBit(L_Stellar_1){PinOp} AwardSpecial } 
+<61AD>	
+<61AD>	;----------------------------------------------------------------------
+<61AD>	; Switch Script
+<61AD>	;----------------------------------------------------------------------
+<61AD>	
+<61AD>	SW_W_Rollover_script:
+<61AD>	                _SwitchScriptConfig Ops(2) 
+                .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
+                               setBit(L_3_Lane){PinOp} \
+                               advance(B_Bonus){PinOp} 
+<61B2>	
+<61B2>	;----------------------------------------------------------------------
+<61B2>	; Switch Script
+<61B2>	;----------------------------------------------------------------------
+<61B2>	
+<61B2>	SW_A_Rollover_script:
+<61B2>	                _SwitchScriptConfig Ops(1) 
+                .DB SS_DEFAULT 1x10{ScoreByte.s6} \
+                               rotLeft(B_WARS_LANES){PinOp} 
+<61B6>	
+<61B6>	;----------------------------------------------------------------------
+<61B6>	; Switch Script
+<61B6>	;----------------------------------------------------------------------
+<61B6>	
+<61B6>	SW_L_Kicker_script:
+<61B6>	                _SwitchScriptConfig 
+<61B7>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+<61B9>	
+<61B9>	;----------------------------------------------------------------------
+<61B9>	; Switch Script
+<61B9>	;----------------------------------------------------------------------
+<61B9>	
+<61B9>	SW_B_L_Jet_script:
+                _SwitchScriptConfig Ops(2) Ext \
+                                           Debounce(8-tics) 
+<61BB>	                .DB L_Bottom_Jet_Bumpers 1x1K{ScoreByte.s6} 
+                                _ExtendedScript IfNot(L_Fire_Again) { 10{SoundCmd} clearBit(L_Bottom_Jet_Bumpers){PinOp} AwardSpecial } \
+                                                                    setBit(Flag#0A){PinOp} \
+                                                                    advance(B_Bonus){PinOp} 
+<61C3>	                .DB Flag#09 1x1K{ScoreByte.s6} 
+                                _ExtendedScript IfNot(L_Fire_Again) { 8x5{SoundCmd} blink(L_W_Rollover){PinOp} ScoreX(2) } \
+                                                                    advance(B_Bonus){PinOp} \
+                                                                    nop 
+<61CB>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_W_Rollover) { 8x5{SoundCmd} blink(L_W_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 setBit(L_W_Rollover){PinOp} 
+<61D3>	
+<61D3>	;----------------------------------------------------------------------
+<61D3>	; Switch Script
+<61D3>	;----------------------------------------------------------------------
+<61D3>	
+<61D3>	Switch0E_script:
+                _SwitchScriptConfig Ops(2) Ext SolInTilt \
+                                           Debounce(32-tics) \
+                                           Fire(S_L_drops:3-tics{SolCmd.s6}) After(28-tics) 
+<61D7>	                .DB L_7_Bonus 2x10K{ScoreByte.s6} 
+                                _ExtendedScript If(L_7_Bonus) { 13{SoundCmd} clearBit(L_7_Bonus){PinOp} AwardEB } \
+                                                              advance(B_Bonus){PinOp} \
+                                                              clear(B_WARS){PinOp} 
+<61DF>	                .DB L_6_Bonus 15x1K{ScoreByte.s6} 
+                                _ExtendedScript { } \
+                                                  advance(B_Bonus){PinOp} \
+                                                  nop 
+<61E7>	                .DB SS_DEFAULT 5x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_5_Bonus) { ScoreX(2) } \
+                                                              advance(B_Bonus){PinOp} \
+                                                              nop 
+<61EF>	
+<61EF>	;----------------------------------------------------------------------
+<61EF>	; Switch Script
+<61EF>	;----------------------------------------------------------------------
+<61EF>	
+<61EF>	SW_L_Bank_1_script:
+<61EF>	                _SwitchScriptConfig 
+<61F0>	                .DB SS_DEFAULT 1x10{ScoreByte.s6} 
+<61F2>	
+<61F2>	;----------------------------------------------------------------------
+<61F2>	; Switch Script
+<61F2>	;----------------------------------------------------------------------
+<61F2>	
+<61F2>	SW_Eject_script:
+                _SwitchScriptConfig Ops(2) \
+                                    Debounce(32-tics) \
+                                    Fire(S_M_drops_1:3-tics{SolCmd.s6}) After(16-tics) 
+                .DB SS_DEFAULT 5x1K{ScoreByte.s6} \
+                               setBit(F_M_Jet){PinOp} \
+                               setBit(L_3_Bonus){PinOp} 
+<61FA>	
+<61FA>	;----------------------------------------------------------------------
+<61FA>	; Switch Script
+<61FA>	;----------------------------------------------------------------------
+<61FA>	
+<61FA>	SW_L_Top_Stand_script:
+                _SwitchScriptConfig Ops(5) \
+                                    Debounce(44-tics) 
+                .DB Flag#0F 5x10K{ScoreByte.s6} \
+                            clearBit(Flag#0E){PinOp} \
+                            clear(B_Eject){PinOp} \
+                            fire(SolOp#04){PinOp} \
+                            clearBit(Flag#0F){PinOp} \
+                            setBit(Flag#08){PinOp} 
+                .DB L_X5_Bonus 5x10K{ScoreByte.s6} \
+                               clear(B_Eject){PinOp} \
+                               fire(SO_center_drops){PinOp} \
+                               clearBit(Flag#0F){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop 
+                .DB L_X4_Bonus 3x10K{ScoreByte.s6} \
+                               clear(B_Eject){PinOp} \
+                               fire(SO_center_drops){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop nop 
+                .DB L_X3_Bonus 2x10K{ScoreByte.s6} \
+                               clear(B_Eject){PinOp} \
+                               fire(SO_center_drops){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop nop 
+                .DB L_X2_Bonus 1x10K{ScoreByte.s6} \
+                               fire(SO_center_drops){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop nop nop 
+                .DB L_Spinners 5x1K{ScoreByte.s6} \
+                               fire(SO_center_drops){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop nop nop 
+                .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
+                               fire(SO_center_drops){PinOp} \
+                               setBit(Flag#08){PinOp} \
+                               nop nop nop 
+<622D>	
+<622D>	;----------------------------------------------------------------------
+<622D>	; Switch Script
+<622D>	;----------------------------------------------------------------------
+<622D>	
+<622D>	SW_U_Top_Stand_script:
+<622D>	                _SwitchScriptConfig 
+<622E>	                .DB SS_DEFAULT 5x10{ScoreByte.s6} 
+<6230>	
+<6230>	;----------------------------------------------------------------------
+<6230>	; Switch Script
+<6230>	;----------------------------------------------------------------------
+<6230>	
+<6230>	SW_1_Rollover_script:
+<6230>	                _SwitchScriptConfig Ops(2) 
+                .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
+                               advance(B_Bonus){PinOp} \
+                               setBit(L_Captive_Ball){PinOp} 
+<6235>	
+<6235>	;----------------------------------------------------------------------
+<6235>	; Switch Script
+<6235>	;----------------------------------------------------------------------
+<6235>	
+<6235>	SW_2_Rollover_script:
+<6235>	                _SwitchScriptConfig Ops(1) 
+                .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
+                               setBit(L_1_Lane){PinOp} 
+<6239>	
+<6239>	;----------------------------------------------------------------------
+<6239>	; Switch Script
+<6239>	;----------------------------------------------------------------------
+<6239>	
+<6239>	SW_3_Rollover_script:
+<6239>	                _SwitchScriptConfig Ops(2) 
+                .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
+                               advance(B_Bonus){PinOp} \
+                               setBit(L_2_Lane){PinOp} 
+<623E>	
+<623E>	;----------------------------------------------------------------------
+<623E>	; Switch Script
+<623E>	;----------------------------------------------------------------------
+<623E>	
+<623E>	SW_M_R_Stand_script:
+<623E>	                _SwitchScriptConfig 
+<623F>	                .DB L_9_Bonus 1x1K{ScoreByte_noSound.s6} 
+<6241>	                .DB SS_DEFAULT 1x100{ScoreByte_noSound.s6} 
+<6243>	
+<6243>	;----------------------------------------------------------------------
+<6243>	; Switch Script
+<6243>	;----------------------------------------------------------------------
+<6243>	
+<6243>	SW_T_Bank_1_script:
+                _SwitchScriptConfig Ops(2) Ext \
+                                           Debounce(8-tics) 
+<6245>	                .DB L_Top_Left_Jet_Bumper 1x1K{ScoreByte.s6} 
+                                _ExtendedScript IfNot(L_Fire_Again) { 10{SoundCmd} clearBit(L_Top_Left_Jet_Bumper){PinOp} AwardSpecial } \
+                                                                    setBit(Flag#0A){PinOp} \
+                                                                    advance(B_Bonus){PinOp} 
+<624D>	                .DB Flag#09 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_W_Rollover) { 8x5{SoundCmd} blink(L_A_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 nop 
+<6255>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_A_Rollover) { 8x5{SoundCmd} blink(L_A_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 setBit(L_A_Rollover){PinOp} 
+<625D>	
+<625D>	;----------------------------------------------------------------------
+<625D>	; Switch Script
+<625D>	;----------------------------------------------------------------------
+<625D>	
+<625D>	SW_T_Bank_2_script:
+                _SwitchScriptConfig Ops(2) Ext \
+                                           Debounce(8-tics) 
+<625F>	                .DB L_Top_Center_Jet_Bumper 1x1K{ScoreByte.s6} 
+                                _ExtendedScript IfNot(L_Fire_Again) { 10{SoundCmd} clearBit(L_Top_Center_Jet_Bumper){PinOp} AwardSpecial } \
+                                                                    setBit(Flag#0A){PinOp} \
+                                                                    advance(B_Bonus){PinOp} 
+<6267>	                .DB Flag#09 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_A_Rollover) { 8x5{SoundCmd} blink(L_R_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 nop 
+<626F>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_R_Rollover) { 8x5{SoundCmd} blink(L_R_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 setBit(L_R_Rollover){PinOp} 
+<6277>	
+<6277>	;----------------------------------------------------------------------
+<6277>	; Switch Script
+<6277>	;----------------------------------------------------------------------
+<6277>	
+<6277>	SW_T_Bank_3_script:
+                _SwitchScriptConfig Ops(2) Ext \
+                                           Debounce(8-tics) 
+<6279>	                .DB L_Top_Right_Jet_Bumper 1x1K{ScoreByte.s6} 
+                                _ExtendedScript IfNot(L_Fire_Again) { 10{SoundCmd} clearBit(L_Top_Right_Jet_Bumper){PinOp} AwardSpecial } \
+                                                                    setBit(Flag#0A){PinOp} \
+                                                                    advance(B_Bonus){PinOp} 
+<6281>	                .DB Flag#09 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_R_Rollover) { 8x5{SoundCmd} blink(L_S_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 nop 
+<6289>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+                                _ExtendedScript If(L_S_Rollover) { 8x5{SoundCmd} blink(L_S_Rollover){PinOp} ScoreX(2) } \
+                                                                 advance(B_Bonus){PinOp} \
+                                                                 setBit(L_S_Rollover){PinOp} 
+<6291>	
+<6291>	;----------------------------------------------------------------------
+<6291>	; Switch Script
+<6291>	;----------------------------------------------------------------------
+<6291>	
+<6291>	SW_T_Bank_Series_script:
+<6291>	                _SwitchScriptConfig Ext 
+<6292>	                .DB SS_DEFAULT 5x1K{ScoreByte.s6} 
+<6294>	                                _ExtendedScript If(L_Stellar_2) { 10{SoundCmd} clearBit(L_Stellar_2){PinOp} AwardSpecial } 
+<6298>	
+<6298>	;----------------------------------------------------------------------
+<6298>	; Switch Script
+<6298>	;----------------------------------------------------------------------
+<6298>	
+<6298>	SW_T_Bank_Standup_script:
+<6298>	                _SwitchScriptConfig Ops(2) 
+                .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
+                               setBit(L_4_Lane){PinOp} \
+                               advance(B_Bonus){PinOp} 
+<629D>	
+<629D>	;----------------------------------------------------------------------
+<629D>	; Switch Script
+<629D>	;----------------------------------------------------------------------
+<629D>	
+<629D>	SW_R_Spinner_script:
+<629D>	                _SwitchScriptConfig 
+<629E>	                .DB L_20_Bonus 10x100{ScoreByte_noSound.s6} 
+<62A0>	                .DB SS_DEFAULT 1x100{ScoreByte.s6} 
+<62A2>	
+<62A2>	;----------------------------------------------------------------------
+<62A2>	; Switch Script
+<62A2>	;----------------------------------------------------------------------
+<62A2>	
+<62A2>	SW_R_Bullseye_script:
+<62A2>	                _SwitchScriptConfig 
+<62A3>	                .DB L_10_Bonus 10x100{ScoreByte_noSound.s6} 
+<62A5>	                .DB SS_DEFAULT 1x100{ScoreByte.s6} 
+<62A7>	
+<62A7>	;----------------------------------------------------------------------
+<62A7>	; Switch Script
+<62A7>	;----------------------------------------------------------------------
+<62A7>	
+<62A7>	Switch26_script:
+<62A7>	                _SwitchScriptConfig 
+<62A8>	                .DB L_1_Bonus 10x100{ScoreByte_noSound.s6} 
+<62AA>	                .DB SS_DEFAULT 1x100{ScoreByte.s6} 
+<62AC>	
+<62AC>	;----------------------------------------------------------------------
+<62AC>	; Switch Script
+<62AC>	;----------------------------------------------------------------------
+<62AC>	
+<62AC>	SW_R_Special_Target_script:
+<62AC>	                _SwitchScriptConfig 
+<62AD>	                .DB L_2_Bonus 5x1K{ScoreByte.s6} 
+<62AF>	                .DB SS_DEFAULT 1x1K{ScoreByte.s6} 
+<62B1>	
+<62B1>	;----------------------------------------------------------------------
+<62B1>	; Switch Script
+<62B1>	;----------------------------------------------------------------------
+<62B1>	
+<62B1>	SW_R_Kicker_script:
+                _SwitchScriptConfig Ops(2) \
+                                    Debounce(32-tics) \
+                                    Fire(S_eject:3-tics{SolCmd.s6}) After(16-tics) 
+                .DB L_2_Bonus 5x1K{ScoreByte.s6} \
+                              setBit(F_R_Jet){PinOp} \
+                              setBit(L_4_Bonus){PinOp} 
+                .DB L_1_Bonus 5x1K{ScoreByte.s6} \
+                              setBit(L_2_Bonus){PinOp} \
+                              setBit(L_4_Bonus){PinOp} 
+                .DB L_10_Bonus 5x1K{ScoreByte.s6} \
+                               setBit(L_1_Bonus){PinOp} \
+                               setBit(L_4_Bonus){PinOp} 
+                .DB L_20_Bonus 5x1K{ScoreByte.s6} \
+                               setBit(L_10_Bonus){PinOp} \
+                               setBit(L_4_Bonus){PinOp} 
+                .DB SS_DEFAULT 5x1K{ScoreByte.s6} \
+                               setBit(L_20_Bonus){PinOp} \
+                               setBit(L_4_Bonus){PinOp} 
+<62C9>	
+<62C9>	;----------------------------------------------------------------------
+<62C9>	; Game Logic Table
+<62C9>	;----------------------------------------------------------------------
+<62C9>	
+gameLogic_1:                    _GameLogic If(L_Captive_Ball) And(L_1_Lane) { \
+                                                              If(L_2_Lane) setBit(Flag#0B){PinOp} \
+                                                              } 
+gameLogic_2:                    _GameLogic IfNot(Flag#0D) AndNot(Flag#0D) { \
+                                                          If(Flag#0B) setBit(Flag#0D){PinOp} \
+                                                          If(Flag#0B) advance(B_X){PinOp} \
+                                                          If(Flag#0B) setBit(Flag#04){PinOp} \
+                                                          } 
+gameLogic_3:                    _GameLogic IfNot(Flag#06) And(L_3_Lane) { \
+                                                          If(L_4_Lane) setBit(Flag#06){PinOp} \
+                                                          } 
+gameLogic_4:                    _GameLogic If(L_W_Rollover) And(L_A_Rollover) { \
+                                                            If(L_R_Rollover) setBit(Flag#05){PinOp} \
+                                                            IfNot(L_S_Rollover) clearBit(Flag#05){PinOp} \
+                                                            } 
+gameLogic_5:                    _GameLogic If(F_R_Jet) { \
+                                                       If(F_B_Jet) setBit(L_Stellar_1){PinOp} \
+                                                       If(F_L_Jet) setBit(L_Stellar_2){PinOp} \
+                                                       IfNot(F_B_Jet) clearBit(L_Stellar_1){PinOp} \
+                                                       } 
+gameLogic_6:                    _GameLogic If(F_R_Jet) { \
+                                                       IfNot(F_L_Jet) clearBit(L_Stellar_2){PinOp} \
+                                                       } 
+gameLogic_7:                    _GameLogic If(L_Outlane_Specials) AndNot(L_Eject_Hole_Extra_Ball) { \
+                                                                  If(L_Bulls_Eye_Target_Special) clear(B_Bonus){PinOp} \
+                                                                  If(L_Bulls_Eye_Target_Special) setBit(L_Eject_Hole_Extra_Ball){PinOp} \
+                                                                  If(L_Bulls_Eye_Target_Special) clearBit(L_Bulls_Eye_Target_Special){PinOp} \
+                                                                  } 
+gameLogic_8:                    _GameLogic IfNot(L_Bulls_Eye_Target_Special) AndNot(L_Eject_Hole_Extra_Ball) { \
+                                                                             If(L_Outlane_Specials) setBit(L_Bulls_Eye_Target_Special){PinOp} \
+                                                                             If(L_Outlane_Specials) clear(B_Bonus){PinOp} \
+                                                                             } 
+gameLogic_9:                    _GameLogic IfNot(L_8_Bonus) And(L_3_Bonus) { \
+                                                            If(L_4_Bonus) setBit(L_8_Bonus){PinOp} \
+                                                            } 
+gameLogic_10:                   _GameLogic { \
+                                           If(L_Bulls_Eye_Target_Special) setBit(L_9_Bonus){PinOp} \
+                                           IfNot(L_Bulls_Eye_Target_Special) clearBit(L_9_Bonus){PinOp} \
+                                           } 
+gameLogic_11:                   _GameLogic If(Adj#01=00) { \
+                                                         If(L_10_Bonus) setBit(L_1_Bonus){PinOp} \
+                                                         If(L_1_Bonus) setBit(L_2_Bonus){PinOp} \
+                                                         } 
+gameLogic_12:                   _GameLogic If(Adj#01=01) And(L_1_Bonus) { \
+                                                         If(L_1_Bonus) setBit(L_2_Bonus){PinOp} \
+                                                         } 
+gameLogic_13:                   _GameLogic If(Adj#03=01) And(L_7_Bonus) { \
+                                                         IfNot(L_Fire_Again) clearBit(L_7_Bonus){PinOp} \
+                                                         } 
+gameLogic_14:                   _GameLogic If(Adj#03=02) AndNot(Flag#09) { \
+                                                         IfNot(L_Fire_Again) setBit(Flag#09){PinOp} \
+                                                         } 
+gameLogic_15:                   _GameLogic If(Adj#03=03) { \
+                                                         IfNot(L_Fire_Again) clearBit(L_7_Bonus){PinOp} \
+                                                         IfNot(L_Fire_Again) setBit(Flag#09){PinOp} \
+                                                         } 
+<6350>	
+<6350>	;----------------------------------------------------------------------
+<6350>	; Game Events Table
+<6350>	;----------------------------------------------------------------------
+<6350>	
+<6350>	gameEvents_table:               .DB F_M_Jet 
+<6351>	                                .DB 0 
+<6352>	                                .DW gameEvent_1_handler 
+<6354>	                                .DB Flag#0A 
+<6355>	                                .DB 0 
+<6356>	                                .DW gameEvent_2_handler 
+<6358>	                                .DB Flag#06 
+<6359>	                                .DB 0 
+<635A>	                                .DW gameEvent_3_handler 
+<635C>	                                .DB Flag#08 
+<635D>	                                .DB 0 
+<635E>	                                .DW gameEvent_4_handler 
+<6360>	                                .DB Flag#05 
+<6361>	                                .DB 0 
+<6362>	                                .DW gameEvent_5_handler 
+<6364>	                                .DB Flag#0B 
+<6365>	                                .DB 112 
+<6366>	                                .DW gameEvent_6_handler 
+<6368>	                                .DB L_8_Bonus 
+<6369>	                                .DB 0 
+<636A>	                                .DW gameEvent_7_handler 
+<636C>	                                .DB Flag#07 
+<636D>	                                .DB 0 
+<636E>	                                .DW gameEvent_8_handler 
+<6370>	                                .DB Flag#04 
+<6371>	                                .DB 0 
+<6372>	                                .DW gameEvent_9_handler 
+<6374>	
+<6374>	;----------------------------------------------------------------------
+<6374>	; Sound Scripts
+<6374>	;----------------------------------------------------------------------
+<6374>	
+<6374>	p1Start_sndList:                .DB $20 
+<6375>	                                .DB Sound#18 Sound#18 Sound#18 Sound#18 $FF 
+<637A>	                                .DB $00 
+<637A>	
+<637B>	p2Start_sndList:                .DB $10 
+<637C>	                                .DB Sound#17 Sound#17 
+<637E>	                                .DB $00 
+<637E>	
+<637F>	p3Start_sndList:                .DB $10 
+<6380>	                                .DB Sound#17 Sound#17 Sound#17 
+<6383>	                                .DB $00 
+<6383>	
+<6384>	p4Start_sndList:                .DB $10 
+<6385>	                                .DB Sound#17 Sound#17 Sound#17 Sound#17 
+<6389>	                                .DB $00 
+<6389>	
+<638A>	match_sndList:                  .DB $20 
+<638B>	                                .DB Sound#1B $FF Sound#1B $FF Sound#1B $FF $FF 
+<6392>	                                .DB $00 
+<6392>	
+<6393>	highScore_sndList:              .DB $42 
+<6394>	                                .DB Sound#19 $FF $FF $FF 
+<6398>	                                .DB $00 
+<6398>	
+<6399>	gameOver_sndList:               .DB $30 
+<639A>	                                .DB Sound#13 Sound#1A Sound#1A Sound#1A Sound#1A Sound#1A Sound#13 
+<63A1>	                                .DB $00 
+<63A1>	
+<63A2>	
+<63A2>	;----------------------------------------------------------------------
+<63A2>	; Ball Start Event Handler
+<63A2>	;----------------------------------------------------------------------
+<63A2>	
+<63A2>	ballstart_event_handler:
+<63A2>	        LDAB    .AD34+1 
+<63A5>	        BITB    #$01 
+<63A7>	        _IF_NE  
+<63A9>	            LDAA    #setBit(Lamp#05){PinOp} 
+<63AB>	            BSR     ballstart_event_handler_640D 
+<63AD>	        _ENDIF
+<63AD>	        LDAB    .AD32+1 
+<63B0>	        BITB    #$01 
+<63B2>	        _IF_NE  
+<63B4>	            LDAA    #$2B 
+<63B6>	            JSR     sys_testBit[A] 
+<63B9>	            _IF_EQ  
+<63BB>	                LDAA    #$2B 
+<63BD>	                JSR     sys_blinkLamp[A] 
+<63C0>	            _ENDIF
+<63C0>	        _ENDIF
+<63C0>	        BSR     game_background_handler_6441 
+<63C2>	        LDAB    =SwitchMaskBuf+7 
+<63C4>	        ANDB    #$FC 
+<63C6>	        STAB    =SwitchMaskBuf+7 
+<63C8>	        CLRA    
+<63C9>	        STAA    __ISRvarDC+1 
+<63CB>	        STAA    _GameVarE0 
+<63CD>	        BSR     gameEvent_8_handler 
+<63CF>	        JMP     ballstart_event_handler_7733 
+<63CF>	
+<63D2>	
+<63D2>	;----------------------------------------------------------------------
+<63D2>	; Game Background Event Handler
+<63D2>	;----------------------------------------------------------------------
+<63D2>	
+<63D2>	game_background_handler:
+<63D2>	        LDAA    _gameStatusFlags 
+<63D4>	        BITA    #$01 
+<63D6>	        _IF_NE  
+<63D8>	            CLRA    
+<63D9>	            STAA    =BlinkBuf+3 
+<63DB>	            STAA    =BlinkBuf+4 
+<63DD>	            STAA    =BlinkBuf+5 
+<63DF>	            RTS     
+<63DF>	    
+<63E0>	        _ENDIF
+<63E0>	        BITA    #$02 
+<63E2>	        _IF_NE  
+<63E4>	            TST     _ISRvarDF 
+<63E7>	            BNE     <RTS 
+<63E9>	            INC     _ISRvarDF 
+<63EC>	            LDAA    #$80 
+<63EE>	            STAA    _soundAndDelay_timer 
+<63F0>	            _LOOP
+<63F0>	                LDAA    _soundAndDelay_timer 
+<63F2>	            _WHILE_NE 
+<63F4>	            BSR     game_background_handler_6441 
+<63F6>	            LDAA    #$34 
+<63F8>	            STAA    PIA_2202_sol9-16(ctrl) 
+<63FB>	        _ENDIF
+<63FB>	        BITA    #$80 
+<63FD>	        BEQ     <RTS 
+<63FF>	        LDAB    _soundAndDelay_timer 
+<6401>	        BNE     <RTS 
+<6403>	        LDAB    __ballTime 
+<6405>	        CMPB    _ISRvarDE 
+<6407>	        BEQ     <RTS 
+<6409>	        STAB    _ISRvarDE 
+<640B>	        LDAA    #setBit(Flag#07){PinOp} 
+<640D>	ballstart_event_handler_640D:
+<640D>	        JMP     sys_PinOp[A] 
+<640D>	
+<6410>	
+<6410>	;----------------------------------------------------------------------
+<6410>	; End of Ball Event Handler
+<6410>	;----------------------------------------------------------------------
+<6410>	
+<6410>	endOfBall_event_handler:
+<6410>	        LDX     __Xstore 
+<6412>	        LDAA    0,X 
+<6414>	        BITA    #$01 
+<6416>	        BNE     .label_641F 
+<6418>	        LDAB    .AD32+1 
+<641B>	        BITB    #$02 
+<641D>	        _IF_NE  
+<641F>	.label_641F:
+<641F>	            CLR     5,X 
+<6421>	            CLR     15,X 
+<6423>	        _ENDIF
+<6423>	        LDAB    .AD34+1 
+<6426>	        BITB    #$02 
+<6428>	        _IF_EQ  
+<642A>	            TST     __ISRvarDC+1 
+<642D>	            BEQ     >RTS 
+<642F>	        _ENDIF
+<642F>	        LDAA    9,X 
+<6431>	        ANDA    #$EF 
+<6433>	        STAA    9,X 
+<6435>	        LDAA    0,X 
+<6437>	        ANDA    #$81 
+<6439>	        STAA    0,X 
+<643B>	
+<643B>	;----------------------------------------------------------------------
+<643B>	; BonusX Countdown Event Handler
+<643B>	;----------------------------------------------------------------------
+<643B>	
+<643B>	bonusX_countdown_event_handler:
+<643B>	        RTS     
+<643B>	
+<643C>	
+<643C>	;----------------------------------------------------------------------
+<643C>	; Switch Handler
+<643C>	;----------------------------------------------------------------------
+<643C>	
+<643C>	SW_slamTilt_handler:
+<643C>	        BSR     game_background_handler_6441 
+<643E>	        JMP     sys_reset_game 
+<643E>	
+<6441>	game_background_handler_6441:
+<6441>	        LDAA    #$93 
+<6443>	.label_6443:
+<6443>	        JMP     sys_solCmdOrPlaySound[A] 
+<6443>	
+<6446>	gameEvent_8_handler:
+<6446>	        LDAA    .AD35+1 
+<6449>	        ANDA    #$0F 
+<644B>	        BEQ     <RTS 
+<644D>	        LDAA    #$92 
+<644F>	        BRA     .label_6443 
+<6451>	
+<6451>	;----------------------------------------------------------------------
+<6451>	; Switch Handler
+<6451>	;----------------------------------------------------------------------
+<6451>	
+<6451>	SW_outhole_handler:
+<6451>	        TST     _gameStatusFlags 
+<6454>	        BPL     .label_646B 
+<6456>	        LDAA    _sound_repeatCount 
+<6458>	        BNE     .label_646E 
+<645A>	        BSR     game_background_handler_6441 
+<645C>	        SEI     
+<645D>	        LDX     #$0000 
+<6460>	        STX     _ISRvarDF 
+<6462>	        STX     _gameEvent_timer_1 
+<6464>	        STX     __gameEvent_timer_1_handler+1 
+<6466>	        STX     __gameEvent_timer_2_handler 
+<6468>	        STX     __expiredTimer_handler 
+<646A>	        CLI     
+<646B>	.label_646B:
+<646B>	        JMP     sys_clearScoreQueue_outhole_handler 
+<646B>	
+<646E>	.label_646E:
+<646E>	        _LOOP
+<646E>	            LDAA    _soundAndDelay_timer 
+<6470>	        _WHILE_NE 
+<6472>	        DEC     _sound_repeatCount 
+<6475>	        LDAA    _sound_duration 
+<6477>	        STAA    _soundAndDelay_timer 
+<6479>	        BRA     SW_outhole_handler 
+<647B>	gameEvent_1_handler:
+<647B>	        LDAA    #$A8 
+<647D>	        JSR     sys_soundCmd[A] 
+<6480>	        LDAA    #advance(Bitgroup#03){PinOp} 
+<6482>	        BSR     SW_2_Rollover_handler_64DF 
+<6484>	        LDAA    #$24 
+<6486>	        BSR     gameEvent_1_handler_64E2 
+<6488>	        _IF_NE  
+<648A>	            LDAA    #setBit(Flag#0F){PinOp} 
+<648C>	            BSR     SW_2_Rollover_handler_64DF 
+<648E>	        _ENDIF
+<648E>	        LDAA    #$25 
+<6490>	.label_6490:
+<6490>	        DECA    
+<6491>	gameEvent_7_handler_6491:
+<6491>	        BSR     gameEvent_1_handler_64E2 
+<6493>	        BEQ     .label_6490 
+<6495>	        JMP     sys_blinkLamp[A] 
+<6495>	
+<6498>	gameEvent_5_handler_6498:
+<6498>	        _LOOP
+<6498>	            TST     _soundAndDelay_timer 
+<649B>	        _WHILE_NE 
+<649D>	        LDAA    #$04 
+<649F>	        STAA    _soundAndDelay_timer 
+<64A1>	        _LOOP
+<64A1>	            TST     _soundAndDelay_timer 
+<64A4>	        _WHILE_NE 
+<64A6>	        RTS     
+<64A6>	
+<64A7>	gameEvent_5_handler_64A7:
+<64A7>	        BSR     gameEvent_5_handler_64EB 
+<64A9>	        BSR     gameEvent_5_handler_6498 
+<64AB>	        LDAA    #fill(Bitgroup#02){PinOp} 
+<64AD>	        BSR     SW_2_Rollover_handler_64DF 
+<64AF>	        BRA     gameEvent_5_handler_6498 
+<64B1>	gameEvent_5_handler:
+<64B1>	        BSR     gameEvent_5_handler_64A7 
+<64B3>	        BSR     gameEvent_5_handler_64A7 
+<64B5>	        BSR     gameEvent_5_handler_64A7 
+<64B7>	        BSR     gameEvent_5_handler_64A7 
+<64B9>	        BSR     gameEvent_5_handler_64EB 
+<64BB>	        LDAA    #$7B 
+<64BD>	        BSR     gameEvent_5_handler_6520 
+<64BF>	        LDAA    =Flags+1 
+<64C1>	        ORAA    #$C0 
+<64C3>	        STAA    =Flags+1 
+<64C5>	        LDAA    #$05 
+<64C7>	        BSR     gameEvent_1_handler_64E2 
+<64C9>	        _IF_EQ  
+<64CB>	            LDAA    #$05 
+<64CD>	        _ELSE   
+<64CF>	            LDAA    #$06 
+<64D1>	            BSR     gameEvent_1_handler_64E2 
+<64D3>	            _IF_EQ  
+<64D5>	                LDAA    #$06 
+<64D7>	            _ELSE   
+<64D9>	                LDAA    #setBit(Flag#0C){PinOp} 
+<64DB>	            _ENDIF
+<64DB>	        _ENDIF
+<64DB>	.label_64DB:
+<64DB>	        BSR     SW_2_Rollover_handler_64DF 
+<64DD>	        LDAA    #clear(Bitgroup#07){PinOp} 
+<64DF>	SW_2_Rollover_handler_64DF:
+<64DF>	        JMP     sys_PinOp[A] 
+<64DF>	
+<64E2>	gameEvent_1_handler_64E2:
+<64E2>	        JMP     sys_testBit[A] 
+<64E2>	
+<64E5>	gameEvent_2_handler:
+<64E5>	        LDAA    #$CC 
+<64E7>	        STAA    __ISRvarDC+1 
+<64E9>	        BSR     SW_2_Rollover_handler_64DF 
+<64EB>	gameEvent_5_handler_64EB:
+<64EB>	        LDAA    #clear(Bitgroup#02){PinOp} 
+<64ED>	        BRA     .label_64DB 
+<64EF>	gameEvent_6_handler:
+<64EF>	        LDAA    #clearBit(Flag#0D){PinOp} 
+<64F1>	        BSR     SW_2_Rollover_handler_64DF 
+<64F3>	        LDAA    #clear(Bitgroup#05){PinOp} 
+<64F5>	        BRA     SW_2_Rollover_handler_64DF 
+<64F7>	
+<64F7>	;----------------------------------------------------------------------
+<64F7>	; Switch Handler
+<64F7>	;----------------------------------------------------------------------
+<64F7>	
+<64F7>	SW_2_Rollover_handler:
+<64F7>	        JSR     sys_exitOnGameOverOrTilt 
+<64FA>	        BSR     SW_2_Rollover_handler_6504 
+<64FC>	        LDX     #SW_2_Rollover_script 
+<64FF>	        STX     __switch_params 
+<6501>	        JMP     sys_switch_script 
+<6501>	
+<6504>	SW_2_Rollover_handler_6504:
+<6504>	        BSR     SW_2_Rollover_handler_6508 
+<6506>	        BSR     SW_2_Rollover_handler_6508 
+<6508>	SW_2_Rollover_handler_6508:
+<6508>	        LDAA    #advance(Bitgroup#00){PinOp} 
+<650A>	        BSR     SW_2_Rollover_handler_64DF 
+<650C>	.label_650C:
+<650C>	        JMP     sys_update_gameLogic 
+<650C>	
+<650F>	gameEvent_7_handler:
+<650F>	        LDAA    =Lamps+5 
+<6511>	        ANDA    #$F9 
+<6513>	        STAA    =Lamps+5 
+<6515>	        LDAA    #advance(Bitgroup#04){PinOp} 
+<6517>	        BSR     SW_2_Rollover_handler_64DF 
+<6519>	        LDAA    #$2D 
+<651B>	        JSR     gameEvent_7_handler_6491 
+<651E>	        LDAA    #$AE 
+<6520>	gameEvent_5_handler_6520:
+<6520>	        JMP     sys_soundCmd[A] 
+<6520>	
+<6523>	gameEvent_9_handler:
+<6523>	        LDAA    #$19 
+<6525>	        BRA     gameEvent_5_handler_6520 
+<6527>	gameEvent_3_handler:
+<6527>	        LDAA    =Lamps+2 
+<6529>	        ANDA    #$3F 
+<652B>	        STAA    =Lamps+2 
+<652D>	        LDAB    #$04 
+<652F>	        LDAA    #$18 
+<6531>	        STAA    __ISRvarDC 
+<6533>	        _LOOP
+<6533>	            LDAA    __ISRvarDC 
+<6535>	            BSR     gameEvent_1_handler_64E2 
+<6537>	            BEQ     >EXITLOOP 
+<6539>	            INC     __ISRvarDC 
+<653C>	            DECB    
+<653D>	        _WHILE_NE 
+<653F>	        LDAA    __ISRvarDC 
+<6541>	        JSR     sys_blinkLamp[A] 
+<6544>	        BRA     .label_650C 
+<6546>	gameEvent_4_handler:
+<6546>	        TST     _GameVarE0 
+<6549>	        _IF_NE  
+<654B>	            RTS     
+<654B>	    
+<654C>	        _ENDIF
+<654C>	        LDAA    #$10 
+<654E>	        STAA    _GameVarE0 
+<6550>	        LDAA    _GameVarE0 
+<6552>	        _IF_NE  
+<6554>	            DECA    
+<6555>	            ANDA    #$0F 
+<6557>	            STAA    _GameVarE0 
+<6559>	            _IF_NE  
+<655B>	                LDAA    #$0A 
+<655D>	                LDX     #$6550 
+<6560>	                LDAB    _gameEvent_timer_1 
+<6562>	                _IF_EQ  
+<6564>	                    STAA    _gameEvent_timer_1 
+<6566>	                    STX     __gameEvent_timer_1_handler 
+<6568>	                _ELSE   
+<656A>	                    LDAB    _gameEvent_timer_2 
+<656C>	                    _IF_EQ  
+<656E>	                        STAA    _gameEvent_timer_2 
+<6570>	                        STX     __gameEvent_timer_2_handler 
+<6572>	                    _ENDIF
+<6572>	                _ENDIF
+<6572>	            _ENDIF
+<6572>	        _ENDIF
+<6572>	        LDAA    #$35 
+<6574>	        JMP     sys_solCmdOrPlaySound[A] 
+<6574>	
+<6577>	
+<6577>	;----------------------------------------------------------------------
+<6577>	; Attract Mode Lamp Data
+<6577>	;----------------------------------------------------------------------
+<6577>	
+attract_mode_data:              _LampData L_Stellar_7 L_Wars_1 L_Wars_2 L_Wars_3 \
+                                                      L_Wars_4 L_Eject_Hole_2000 L_Eject_Hole_5000 L_Eject_Hole_10000 \
+                                                      L_Not_Used L_Bulls_Eye_Target_Special L_Eject_Hole_Extra_Ball L_Captive_Ball \
+                                                      L_1_Lane L_2_Lane L_A_Rollover L_R_Rollover \
+                                                      L_S_Rollover L_Bottom_Jet_Bumpers L_Top_Left_Jet_Bumper L_Top_Center_Jet_Bumper \
+                                                      L_Spinners L_3_Bonus L_4_Bonus L_5_Bonus 
+                                _LampData L_Stellar_7 L_Wars_1 L_Wars_2 L_Wars_3 \
+                                                      L_Eject_Hole_5000 L_Eject_Hole_10000 L_Not_Used L_Bulls_Eye_Target_Special \
+                                                      L_Eject_Hole_Extra_Ball L_Captive_Ball L_1_Lane L_A_Rollover \
+                                                      L_R_Rollover L_S_Rollover L_Bottom_Jet_Bumpers L_Top_Left_Jet_Bumper \
+                                                      L_Top_Center_Jet_Bumper L_Spinners L_X2_Bonus L_10_Bonus \
+                                                      L_2_Bonus L_3_Bonus L_4_Bonus L_5_Bonus 
+                                _LampData L_Stellar_7 L_Wars_1 L_Wars_2 L_Wars_4 \
+                                                      L_Eject_Hole_2000 L_Eject_Hole_10000 L_Not_Used L_Bulls_Eye_Target_Special \
+                                                      L_1_Lane L_2_Lane L_W_Rollover L_A_Rollover \
+                                                      L_S_Rollover L_Bottom_Jet_Bumpers L_Top_Center_Jet_Bumper L_Top_Right_Jet_Bumper \
+                                                      L_Spinners L_X2_Bonus L_X3_Bonus L_20_Bonus \
+                                                      L_3_Bonus L_4_Bonus L_5_Bonus L_6_Bonus L_9_Bonus 
+                                _LampData L_Stellar_7 L_Wars_1 L_Wars_3 L_Wars_4 \
+                                                      L_Eject_Hole_2000 L_Eject_Hole_5000 L_Not_Used L_Bulls_Eye_Target_Special \
+                                                      L_Captive_Ball L_2_Lane L_W_Rollover L_A_Rollover \
+                                                      L_S_Rollover L_Bottom_Jet_Bumpers L_Top_Center_Jet_Bumper L_Top_Right_Jet_Bumper \
+                                                      L_Spinners L_X2_Bonus L_X3_Bonus L_X4_Bonus \
+                                                      L_1_Bonus L_3_Bonus L_4_Bonus L_5_Bonus L_6_Bonus L_7_Bonus L_9_Bonus 
+                                _LampData L_Stellar_7 L_Wars_2 L_Wars_3 L_Wars_4 \
+                                                      L_Eject_Hole_2000 L_Eject_Hole_5000 L_Eject_Hole_10000 L_Bulls_Eye_Target_Special \
+                                                      L_Eject_Hole_Extra_Ball L_Captive_Ball L_1_Lane L_2_Lane \
+                                                      L_W_Rollover L_R_Rollover L_S_Rollover L_Bottom_Jet_Bumpers \
+                                                      L_Top_Left_Jet_Bumper L_Top_Right_Jet_Bumper L_Spinners L_X2_Bonus \
+                                                      L_X3_Bonus L_X4_Bonus L_X5_Bonus L_3_Bonus L_4_Bonus L_5_Bonus 
+                                _LampData L_Wars_1 L_Wars_2 L_Wars_3 L_Wars_4 \
+                                                   L_Eject_Hole_2000 L_Eject_Hole_5000 L_Eject_Hole_10000 L_Not_Used \
+                                                   L_Eject_Hole_Extra_Ball L_Captive_Ball L_1_Lane L_W_Rollover \
+                                                   L_R_Rollover L_S_Rollover L_Bottom_Jet_Bumpers L_Top_Left_Jet_Bumper \
+                                                   L_Top_Right_Jet_Bumper L_Spinners L_X2_Bonus L_X3_Bonus \
+                                                   L_X4_Bonus L_X5_Bonus L_10_Bonus L_2_Bonus L_3_Bonus L_4_Bonus L_5_Bonus 
+                                _LampData L_Fire_Again L_Stellar_1 L_Stellar_2 L_Stellar_3 \
+                                                       L_Stellar_4 L_Stellar_5 L_Stellar_6 L_Stellar_7 \
+                                                       L_Wars_1 L_Wars_2 L_Wars_3 L_Wars_4 \
+                                                       L_Eject_Hole_2000 L_Eject_Hole_5000 L_Eject_Hole_10000 L_Not_Used \
+                                                       L_Bulls_Eye_Target_Special L_Eject_Hole_Extra_Ball L_1_Lane L_2_Lane \
+                                                       L_3_Lane L_4_Lane L_W_Rollover L_A_Rollover \
+                                                       L_R_Rollover L_Top_Left_Jet_Bumper L_Top_Center_Jet_Bumper L_Top_Right_Jet_Bumper \
+                                                       L_Spinners L_X2_Bonus L_X3_Bonus L_X4_Bonus \
+                                                       L_X5_Bonus L_20_Bonus L_3_Bonus L_4_Bonus L_5_Bonus L_6_Bonus L_9_Bonus 
+                                _LampData L_Fire_Again L_Stellar_1 L_Stellar_2 L_Stellar_3 \
+                                                       L_Stellar_4 L_Stellar_5 L_Stellar_6 L_Stellar_7 \
+                                                       L_Wars_1 L_Wars_2 L_Wars_3 L_Wars_4 \
+                                                       L_Eject_Hole_2000 L_Eject_Hole_5000 L_Eject_Hole_10000 L_Not_Used \
+                                                       L_Bulls_Eye_Target_Special L_Eject_Hole_Extra_Ball L_Captive_Ball L_2_Lane \
+                                                       L_3_Lane L_4_Lane L_W_Rollover L_A_Rollover \
+                                                       L_R_Rollover L_Top_Left_Jet_Bumper L_Top_Center_Jet_Bumper L_Top_Right_Jet_Bumper \
+                                                       L_Spinners L_X2_Bonus L_X3_Bonus L_X4_Bonus \
+                                                       L_X5_Bonus L_1_Bonus L_2_Bonus L_5_Bonus L_6_Bonus L_7_Bonus L_9_Bonus 
+<65A7>	                                _LampData 
+<65AD>	
+<65AD>	;----------------------------------------------------------------------
+<65AD>	; ANALYSIS GAP
+<65AD>	;----------------------------------------------------------------------
+<65AD>	
+<65AD>	ANALYSIS_GAP:                   .DB $00[595x]
