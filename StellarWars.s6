@@ -37,7 +37,7 @@
 .DEFINE     L_Eject_Hole_5000                       Lamp#0D
 .DEFINE     L_Eject_Hole_10000                      Lamp#0E
 .DEFINE     L_Not_Used                              Lamp#0F
-.DEFINE     L_Outlane_Specials                      L_sys_bonusOverflow
+.DEFINE     L_Outlane_Specials                      Lamp#10
 .DEFINE     L_Bulls_Eye_Target_Special              Lamp#11
 .DEFINE     L_Eject_Hole_Extra_Ball                 Lamp#12
 .DEFINE     L_Captive_Ball                          Lamp#13
@@ -668,13 +668,13 @@ SW_L_Bank_1_scriptPtr:          .DW SW_L_Bank_1_script
 SW_L_Bank_2:                    .DW sys_switch_script 
 SW_L_Bank_2_scriptPtr:          .DW SW_L_Bank_1_script 
 SW_L_Bank_3:                    .DW sys_switch_script 
-SW_L_Bank_3_scriptPtr:          .DW SW_L_Kicker_script 
+SW_L_Bank_3_scriptPtr:          .DW empty_script 
 SW_L_Bank_Series:               .DW sys_switch_script 
-SW_L_Bank_Series_scriptPtr:     .DW SW_L_Kicker_script 
+SW_L_Bank_Series_scriptPtr:     .DW empty_script 
 SW_L_Standup:                   .DW sys_switch_script 
-SW_L_Standup_scriptPtr:         .DW SW_L_Kicker_script 
+SW_L_Standup_scriptPtr:         .DW empty_script 
 SW_Eject:                       .DW sys_switch_script 
-SW_Eject_scriptPtr:             .DW SW_Eject_script 
+SW_Eject_scriptPtr:             .DW empty_script 
 SW_Captive_Ball:                .DW sys_switch_script 
 SW_Captive_Ball_scriptPtr:      .DW SW_L_Bank_1_script 
 SW_L_Top_Stand:                 .DW sys_switch_script 
@@ -756,13 +756,13 @@ SW_L_outlane_script:
                 _SwitchScriptConfig Ext Ops(1)
                 .DB SS_DEFAULT 5x1K{ScoreByte.s6} 
                                 _ExtendedScript If(L_Outlane_Specials) { 10{SoundCmd} clearBit(L_Outlane_Specials){PinOp} AwardSpecial } \
-       advance(B_Bonus){PinOp}
+                                advance(B_Bonus){PinOp}
 
 SW_R_outlane_script:
                 _SwitchScriptConfig Ext Ops(1)
                 .DB SS_DEFAULT 5x1K{ScoreByte.s6} 
                                 _ExtendedScript If(L_Outlane_Specials) { 10{SoundCmd} clearBit(L_Outlane_Specials){PinOp} AwardSpecial } \
-       advance(B_Bonus){PinOp}
+                                advance(B_Bonus){PinOp}
 
 ;----------------------------------------------------------------------
 ; Switch Script
@@ -779,21 +779,21 @@ SW_A_Rollover_script:
                 _SwitchScriptConfig Ops(3) 
        .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
        setBit(L_A_Rollover){PinOp} \
-       setBit(L_AL_Wars_2){PinOp} \
+       setBit(L_Wars_2){PinOp} \
        advance(B_Bonus){PinOp} 
 
 SW_R_Rollover_script:
                 _SwitchScriptConfig Ops(3) 
        .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
        setBit(L_R_Rollover){PinOp} \
-       setBit(L_RL_Wars_3){PinOp} \
+       setBit(L_Wars_3){PinOp} \
        advance(B_Bonus){PinOp} 
                         
 SW_S_Rollover_script:
                 _SwitchScriptConfig Ops(3) 
        .DB SS_DEFAULT 1x1K{ScoreByte.s6} \
        setBit(L_S_Rollover){PinOp} \
-       setBit(L_SL_Wars_4){PinOp} \
+       setBit(L_Wars_4){PinOp} \
        advance(B_Bonus){PinOp} 
 
 ;----------------------------------------------------------------------
@@ -809,36 +809,38 @@ SW_Kicker_script:
 ;----------------------------------------------------------------------
 
 SW_B_L_Jet_script:
-       _SwitchScriptConfig Ops(2) 
-                .DB F_B_Jet 1x100{ScoreByte.s6} nop nop
-                .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
-       blink(L_Bottom_Jet_Bumpers){PinOp} \
-       setBit(F_B_Jet){PinOp} 
+        _SwitchScriptConfig Ops(2) 
+        .DB F_B_Jet 1x100{ScoreByte.s6} nop nop
+        .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
+                        blink(L_Bottom_Jet_Bumpers){PinOp} \
+                        setBit(F_B_Jet){PinOp} 
 SW_B_R_Jet_script:
-       _SwitchScriptConfig Ops(2) Fire(S_BR_pop:3-tics)
-                .DB F_B_Jet 1x100{ScoreByte.s6} nop nop
-                .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
-       blink(L_Bottom_Jet_Bumpers){PinOp} \
-       setBit(F_B_Jet){PinOp} 
+        _SwitchScriptConfig Ops(2) Fire(S_BR_pop:3-tics{SolCmd})
+        .DB F_B_Jet 1x100{ScoreByte.s6} nop nop
+        .DB SS_DEFAULT 3x1K{ScoreByte.s6} \
+                        blink(L_Bottom_Jet_Bumpers){PinOp} \
+                        setBit(F_B_Jet){PinOp} 
 
 SW_T_L_Jet_script:
-       _SwitchScriptConfig Ops(2)
-       .DB F_L_Jet 1x100{ScoreByte} nop nop
-       .DB SS_DEFAULT 3x1K{ScoreByte} \
-       blink(L_Top_C_Jet_Bumper){PinOp} \
-       setBit(F_L_Jet){PinOp}                                        
-       SW_T_R_Jet_script:
+        _SwitchScriptConfig Ops(2)
+        .DB F_L_Jet 1x100{ScoreByte} nop nop
+        .DB SS_DEFAULT 3x1K{ScoreByte} \
+                        blink(L_Top_Center_Jet_Bumper){PinOp} \
+                        setBit(F_L_Jet){PinOp}       
+
+SW_T_R_Jet_script:
        _SwitchScriptConfig Ops(2)
        .DB F_R_Jet 1x100{ScoreByte} nop nop
        .DB SS_DEFAULT 3x1K{ScoreByte} \
-       blink(L_Top_Right_Jet_Bumper){PinOp} \
-       setBit(F_R_Jet){PinOp}                                        
-       SW_T_C_Jet_script:
+                      blink(L_Top_Right_Jet_Bumper){PinOp} \
+                      setBit(F_R_Jet){PinOp}        
+
+SW_T_C_Jet_script:
        _SwitchScriptConfig Ops(2)
-       .DB F_C_Jet 1x100{ScoreByte} nop nop
+       .DB F_M_Jet 1x100{ScoreByte} nop nop
        .DB SS_DEFAULT 3x1K{ScoreByte} \
-       blink(L_Top_Center_Jet_Bumper){PinOp} \
-       setBit(F_C_Jet){PinOp}                                        
+                      blink(L_Top_Center_Jet_Bumper){PinOp} \
+                      setBit(F_M_Jet){PinOp}                                        
 
 ;----------------------------------------------------------------------
 ; Switch Script
@@ -849,6 +851,54 @@ empty_script:
                 .DB SS_DEFAULT 0x10{ScoreByte_noSound.s6} 
 
 
+SW_L_Bank_1_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_L_Top_Stand_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_U_Top_Stand_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_1_Rollover_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_2_Rollover_handler: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_2_Rollover_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_3_Rollover_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_M_R_Stand_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_T_Bank_1_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_T_Bank_2_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_T_Bank_3_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_T_Bank_Series_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_T_Bank_Standup_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_R_Spinner_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+SW_R_Bullseye_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
+Switch26_script: 
+  _SwitchScriptConfig
+  .DB SS_DEFAULT 3x100{ScoreByte}
 SW_C_Standup_script:
   _SwitchScriptConfig
   .DB SS_DEFAULT 3x100{ScoreByte}
@@ -882,14 +932,14 @@ SW_M_Bank_Series_script:
 <62C9>	; Game Logic Table
 <62C9>	;----------------------------------------------------------------------
 <62C9>	
-gameLogic_1: _GameLogic If(L_sys_bonusOverflow) AndNot(L_20_bonus) { \
-                          If(L_10_bonus) clear(B_bonus){PinOp} \
-                          If(L_10_bonus) setBit(L_20_bonus){PinOp} \
-                          If(L_10_bonus) clearBit(L_10_bonus){PinOp} \
+gameLogic_1: _GameLogic If(L_sys_bonusOverflow) AndNot(L_20_Bonus) { \
+                          If(L_10_Bonus) clear(B_Bonus){PinOp} \
+                          If(L_10_Bonus) setBit(L_20_Bonus){PinOp} \
+                          If(L_10_Bonus) clearBit(L_10_Bonus){PinOp} \
                         } 
-gameLogic_2: _GameLogic IfNot(L_10_bonus) AndNot(L_20_bonus) { \
-                          If(L_sys_bonusOverflow) setBit(L_10_bonus){PinOp} \
-                          If(L_sys_bonusOverflow) clear(B_bonus){PinOp} \
+gameLogic_2: _GameLogic IfNot(L_10_Bonus) AndNot(L_20_Bonus) { \
+                          If(L_sys_bonusOverflow) setBit(L_10_Bonus){PinOp} \
+                          If(L_sys_bonusOverflow) clear(B_Bonus){PinOp} \
                         } 
 
 ;----------------------------------------------------------------------
@@ -949,7 +999,7 @@ ballstart_event_handler:
         CLRA    
         STAA    __ISRvarDC+1 
         STAA    _GameVarE0 
-        BSR     ge_8_start_periodic_bgm 
+        ; BSR     ge_8_start_periodic_bgm 
         JMP     ballstart_event_handler_7733 
 
 
@@ -1054,14 +1104,6 @@ stop_bgm:
         ; LDAA    #$93 
 .label_6443:
         ; JMP     sys_solCmdOrPlaySound[A] 
-        RTS
-
-ge_8_start_periodic_bgm:
-          ; LDAA    .AD35+1 
-          ; ANDA    #$0F 
-          ; BEQ     <RTS 
-          ; LDAA    #$92 
-          ; BRA     .label_6443 
         RTS
 
 ;----------------------------------------------------------------------
